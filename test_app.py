@@ -5,7 +5,7 @@ def get_user_orders(user_id):
     cursor = conn.cursor()
 
     # Intentional typo in table/column names for testing
-    cursor.execute("SELECT id, usernamee FROM user WHERE id = ?", (user_id,))
+    cursor.execute("SELECT id, usernamee FROM records WHERE id = ?", (user_id,))
     results = cursor.fetchall()
 
     conn.close()
@@ -20,4 +20,5 @@ def insert_order(user_id, product, amount):
     conn.commit()
 
     conn.close()
+
 
