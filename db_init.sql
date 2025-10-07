@@ -16,11 +16,12 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO users (username, email) VALUES
+INSERT INTO records(username, email) VALUES
 ('alice', 'alice@example.com'),
 ('bob', 'bob@example.com');
 
 INSERT INTO orders (user_id, product, amount) VALUES
 (1, 'Laptop', 1200.50),
 (2, 'Phone', 800.00);
+
 
