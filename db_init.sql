@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS orders;
 
-CREATE TABLE records (
+CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     username TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL
@@ -16,12 +16,13 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO records(username, email) VALUES
+INSERT INTO users(username, email) VALUES
 ('alice', 'alice@example.com'),
 ('bob', 'bob@example.com');
 
 INSERT INTO orders (user_id, product, amount) VALUES
 (1, 'Laptop', 1200.50),
 (2, 'Phone', 800.00);
+
 
 
